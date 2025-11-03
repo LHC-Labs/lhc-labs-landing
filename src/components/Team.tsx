@@ -45,20 +45,21 @@ export const Team = () => {
           {teamMembers.map((member, index) => (
             <Card 
               key={member.name}
-              className="bg-[var(--gradient-card)] border-border hover:shadow-[var(--shadow-medium)] transition-[var(--transition-smooth)] animate-fade-in overflow-hidden"
+              className="bg-[var(--gradient-card)] border-border hover:shadow-[var(--shadow-medium)] hover:-translate-y-2 transition-all duration-500 animate-scale-in overflow-hidden group"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <CardHeader className="p-0">
-                <div className="aspect-square overflow-hidden">
+                <div className="aspect-square overflow-hidden relative">
                   <img 
                     src={member.image} 
                     alt={member.name}
-                    className="w-full h-full object-cover hover:scale-110 transition-[var(--transition-smooth)]"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </CardHeader>
               <CardContent className="p-6">
-                <h3 className="text-2xl font-bold text-foreground mb-1">
+                <h3 className="text-2xl font-bold text-foreground mb-1 group-hover:text-accent transition-colors duration-300">
                   {member.name}
                 </h3>
                 <p className="text-accent font-medium mb-3">
@@ -70,14 +71,14 @@ export const Team = () => {
                 <div className="flex gap-3">
                   <a 
                     href={member.linkedin}
-                    className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-[var(--transition-smooth)]"
+                    className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-accent hover:text-accent-foreground hover:scale-110 transition-all duration-300"
                     aria-label={`${member.name} LinkedIn`}
                   >
                     <Linkedin className="w-5 h-5" />
                   </a>
                   <a 
                     href={`mailto:${member.email}`}
-                    className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-[var(--transition-smooth)]"
+                    className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-accent hover:text-accent-foreground hover:scale-110 transition-all duration-300"
                     aria-label={`Email ${member.name}`}
                   >
                     <Mail className="w-5 h-5" />

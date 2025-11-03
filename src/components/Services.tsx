@@ -39,14 +39,14 @@ export const Services = () => {
           {services.map((service, index) => (
             <Card 
               key={service.title}
-              className="bg-[var(--gradient-card)] border-border hover:shadow-[var(--shadow-medium)] transition-[var(--transition-smooth)] animate-fade-in"
+              className="bg-[var(--gradient-card)] border-border hover:shadow-[var(--shadow-medium)] hover:-translate-y-2 transition-all duration-500 animate-scale-in group"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <CardHeader>
-                <div className="w-14 h-14 rounded-lg bg-[var(--gradient-accent)] flex items-center justify-center mb-4 shadow-[var(--shadow-soft)]">
+                <div className="w-14 h-14 rounded-lg bg-[var(--gradient-accent)] flex items-center justify-center mb-4 shadow-[var(--shadow-soft)] group-hover:scale-110 transition-transform duration-300">
                   <service.icon className="w-7 h-7 text-primary-foreground" />
                 </div>
-                <CardTitle className="text-2xl mb-2">{service.title}</CardTitle>
+                <CardTitle className="text-2xl mb-2 group-hover:text-accent transition-colors duration-300">{service.title}</CardTitle>
                 <CardDescription className="text-base">
                   {service.description}
                 </CardDescription>
