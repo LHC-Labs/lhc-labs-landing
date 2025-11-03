@@ -7,12 +7,12 @@ export const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-60"
+        className="absolute inset-0 bg-cover bg-center opacity-40"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
       
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-[var(--gradient-hero)] opacity-80" />
+      <div className="absolute inset-0 bg-[var(--gradient-hero)] opacity-95" />
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center animate-fade-in-slow">
