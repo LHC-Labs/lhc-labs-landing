@@ -20,14 +20,14 @@ export const CTA = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in delay-200">
             <Button 
               size="lg"
-              className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 hover:scale-105 shadow-[var(--shadow-glow)] transition-all duration-300 text-lg px-8"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 hover:scale-105 shadow-[var(--shadow-glow)] transition-all duration-300 text-lg px-8 font-semibold"
             >
               Contact Us
             </Button>
             <Button 
               size="lg"
               variant="outline"
-              className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 hover:scale-105 transition-all duration-300 text-lg px-8"
+              className="border-2 border-accent text-accent hover:bg-accent/10 hover:scale-105 transition-all duration-300 text-lg px-8 font-semibold"
             >
               View Our Work
             </Button>
