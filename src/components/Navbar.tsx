@@ -6,7 +6,6 @@ import lhcLogo from "@/assets/lhc-logo.svg";
 const navLinks = [
   { name: "Home", href: "#hero" },
   { name: "Services", href: "#learn" },
-  { name: "Workshops", href: "#workshops" },
   { name: "About", href: "#about" },
   { name: "Contact", href: "#contact" },
 ];

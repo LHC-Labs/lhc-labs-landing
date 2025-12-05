@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
-import lhcLogo from "@/assets/lhc-logo.svg";
 import { ArrowRight, Mail } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -17,13 +17,13 @@ export const Hero = () => {
       
       {/* Deep purple gradient background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(268_50%_15%)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,hsl(270_40%_12%)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(240_30%_8%)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(270_60%_20%)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,hsl(280_50%_18%)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(260_40%_12%)_0%,transparent_50%)]" />
         
         {/* Subtle grid pattern */}
         <div 
-          className="absolute inset-0 opacity-[0.02]"
+          className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage: `linear-gradient(hsl(270 60% 75% / 0.4) 1px, transparent 1px), linear-gradient(90deg, hsl(270 60% 75% / 0.4) 1px, transparent 1px)`,
             backgroundSize: '80px 80px'
@@ -31,33 +31,41 @@ export const Hero = () => {
         />
         
         {/* Soft ambient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-learn/5 rounded-full blur-[150px] animate-pulse-glow" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-create/5 rounded-full blur-[120px] animate-pulse-glow" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-1/2 right-1/3 w-[300px] h-[300px] bg-harness/5 rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: "4s" }} />
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-learn/8 rounded-full blur-[150px] animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-create/8 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-1/2 right-1/3 w-[300px] h-[300px] bg-harness/8 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "4s" }} />
       </div>
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 pt-20">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Logo */}
-          <img 
-            src={lhcLogo} 
-            alt="LHC Labs Logo" 
-            className="w-24 h-24 mx-auto mb-10 animate-fade-in drop-shadow-[0_0_50px_rgba(180,150,210,0.3)]"
-          />
-          
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 tracking-tight animate-fade-in leading-tight">
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 tracking-tight leading-tight"
+          >
             Human-centred AI you can{" "}
             <span className="text-learn">Learn</span>,{" "}
             <span className="text-harness">Harness</span>, and{" "}
             <span className="text-create">Create</span> with.
-          </h1>
+          </motion.h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto font-light animate-fade-in delay-100 leading-relaxed">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto font-light leading-relaxed"
+          >
             Accessible, intentional AI consulting and education.
-          </p>
+          </motion.p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in delay-200">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
             <Button 
               size="lg" 
               onClick={() => scrollToSection("learn")}
@@ -75,7 +83,7 @@ export const Hero = () => {
               <Mail className="mr-2 w-4 h-4" />
               Contact us
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
       
