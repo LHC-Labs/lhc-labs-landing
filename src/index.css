@@ -9,8 +9,8 @@
 
 @layer base {
   :root {
-    /* Deep purple background - almost black */
-    --background: 240 30% 6%;
+    /* Deep purple background - richer purple tone */
+    --background: 265 45% 8%;
     --foreground: 270 20% 95%;
 
     --card: 240 28% 10%;
