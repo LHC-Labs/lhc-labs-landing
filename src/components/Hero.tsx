@@ -2,18 +2,17 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import lhcLogo from "@/assets/lhc-logo.svg";
 import { ArrowRight, Mail } from "lucide-react";
-import { Link } from "react-router-dom";
 
 export const Hero = () => {
-  const scrollToServices = () => {
-    const element = document.querySelector("#pillars");
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       <Navbar />
       
       {/* Deep purple gradient background */}
@@ -61,7 +60,7 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in delay-200">
             <Button 
               size="lg" 
-              onClick={scrollToServices}
+              onClick={() => scrollToSection("learn")}
               className="group bg-accent text-accent-foreground hover:bg-accent/90 shadow-[var(--shadow-lavender)] hover:shadow-[0_0_50px_hsla(270,60%,75%,0.4)] transition-all duration-300 text-base px-8 py-6 font-medium rounded-xl"
             >
               Explore our services
@@ -70,13 +69,11 @@ export const Hero = () => {
             <Button 
               size="lg" 
               variant="outline"
-              asChild
+              onClick={() => scrollToSection("contact")}
               className="border border-border/50 bg-card/30 backdrop-blur-sm text-foreground hover:bg-card/50 hover:border-accent/50 transition-all duration-300 text-base px-8 py-6 font-medium rounded-xl"
             >
-              <Link to="/contact">
-                <Mail className="mr-2 w-4 h-4" />
-                Contact us
-              </Link>
+              <Mail className="mr-2 w-4 h-4" />
+              Contact us
             </Button>
           </div>
         </div>
