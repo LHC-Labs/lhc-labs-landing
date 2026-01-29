@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { 
@@ -71,9 +72,9 @@ const directors = [
 
 // Service Section Component
 const ServiceSection = ({ 
-  id, title, subtitle, services, colorClass 
+  id, title, subtitle, services, colorClass, useCarousel = false
 }: { 
-  id: string; title: string; subtitle: string; services: typeof learnServices; colorClass: string;
+  id: string; title: string; subtitle: string; services: typeof learnServices; colorClass: string; useCarousel?: boolean;
 }) => {
   const colorStyles = {
     learn: {
@@ -82,6 +83,7 @@ const ServiceSection = ({
       icon: "bg-learn/20 text-learn group-hover:bg-learn/30",
       border: "border-learn/20 hover:border-learn/40",
       title: "text-learn",
+      arrow: "bg-learn/20 text-learn hover:bg-learn/40 border-learn/30",
     },
     harness: {
       gradient: "bg-[radial-gradient(ellipse_at_right,hsl(210_60%_18%)_0%,transparent_50%)]",
@@ -89,6 +91,7 @@ const ServiceSection = ({
       icon: "bg-harness/20 text-harness group-hover:bg-harness/30",
       border: "border-harness/20 hover:border-harness/40",
       title: "text-harness",
+      arrow: "bg-harness/20 text-harness hover:bg-harness/40 border-harness/30",
     },
     create: {
       gradient: "bg-[radial-gradient(ellipse_at_center,hsl(330_50%_18%)_0%,transparent_50%)]",
@@ -96,9 +99,26 @@ const ServiceSection = ({
       icon: "bg-create/20 text-create group-hover:bg-create/30",
       border: "border-create/20 hover:border-create/40",
       title: "text-create",
+      arrow: "bg-create/20 text-create hover:bg-create/40 border-create/30",
     },
   };
   const styles = colorStyles[colorClass as keyof typeof colorStyles];
+
+  const ServiceCard = ({ service, index }: { service: typeof services[0]; index: number }) => (
+    <motion.div 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      className={`group p-6 rounded-2xl bg-card/50 border ${styles.border} transition-all duration-300 hover:-translate-y-1 h-full`}
+    >
+      <div className={`w-12 h-12 mb-5 rounded-xl ${styles.icon} flex items-center justify-center transition-all duration-300`}>
+        <service.icon className="w-6 h-6" />
+      </div>
+      <h3 className="text-lg font-semibold text-foreground mb-2">{service.title}</h3>
+      <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
+    </motion.div>
+  );
 
   return (
     <section id={id} className="py-24 relative overflow-hidden scroll-mt-20">
@@ -118,24 +138,28 @@ const ServiceSection = ({
             <h2 className={`text-3xl md:text-4xl font-bold ${styles.title} mb-4`}>{title}</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{subtitle}</p>
           </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <motion.div 
-                key={service.title} 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true, margin: "-50px" }}
-                className={`group p-6 rounded-2xl bg-card/50 border ${styles.border} transition-all duration-300 hover:-translate-y-1`}
-              >
-                <div className={`w-12 h-12 mb-5 rounded-xl ${styles.icon} flex items-center justify-center transition-all duration-300`}>
-                  <service.icon className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{service.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
-              </motion.div>
-            ))}
-          </div>
+          
+          {useCarousel ? (
+            <div className="px-12">
+              <Carousel opts={{ align: "start", loop: true }} className="w-full">
+                <CarouselContent className="-ml-4">
+                  {services.map((service, index) => (
+                    <CarouselItem key={service.title} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                      <ServiceCard service={service} index={index} />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className={`${styles.arrow} -left-4`} />
+                <CarouselNext className={`${styles.arrow} -right-4`} />
+              </Carousel>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {services.map((service, index) => (
+                <ServiceCard key={service.title} service={service} index={index} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>
@@ -282,7 +306,7 @@ const Index = () => {
       <Pillars />
       
       {/* Services Sections */}
-      <ServiceSection id="learn" title="Learn" subtitle="Workshops and education that make AI accessible and understandable." services={learnServices} colorClass="learn" />
+      <ServiceSection id="learn" title="Learn" subtitle="Workshops and education that make AI accessible and understandable." services={learnServices} colorClass="learn" useCarousel />
       <ServiceSection id="harness" title="Harness" subtitle="Applied AI and data analysis for real-world workflows and systems." services={harnessServices} colorClass="harness" />
       <ServiceSection id="create" title="Create" subtitle="Custom AI tools and prototypes designed with humans at the centre." services={createServices} colorClass="create" />
       
