@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import lhcLogo from "@/assets/lhc-logo.png";
 
 const navLinks = [
-  { name: "Home", href: "#hero" },
-  { name: "Services", href: "#learn" },
+  { name: "Work", href: "#work" },
+  { name: "Workshops", href: "#workshops" },
+  { name: "Approach", href: "#approach" },
   { name: "About", href: "#about" },
   { name: "Contact", href: "#contact" },
 ];

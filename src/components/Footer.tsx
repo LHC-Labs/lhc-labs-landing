@@ -1,58 +1,53 @@
-import { Link } from "react-router-dom";
-import lhcLogo from "@/assets/lhc-logo.svg";
+import lhcLogo from "@/assets/lhc-logo.png";
+
+const scrollToSection = (href: string) => {
+  const element = document.getElementById(href.slice(1));
+  if (element) element.scrollIntoView({ behavior: "smooth" });
+};
+
+const footerLinks = [
+  { name: "Our Work", href: "#work" },
+  { name: "Workshops", href: "#workshops" },
+  { name: "Approach", href: "#approach" },
+  { name: "About", href: "#about" },
+  { name: "Contact", href: "#contact" },
+];
 
 export const Footer = () => {
   return (
     <footer className="bg-card/50 py-16 border-t border-border/50">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
-          {/* Brand */}
           <div className="md:col-span-2">
-            <Link to="/" className="flex items-center gap-3 mb-4">
-              <img src={lhcLogo} alt="LHC Labs" className="w-10 h-10" />
-              <span className="font-bold text-xl text-foreground">LHC Labs</span>
-            </Link>
+            <button onClick={() => scrollToSection("#hero")} className="flex items-center gap-3 mb-4">
+              <img src={lhcLogo} alt="LHC Labs" className="w-12 h-12" />
+            </button>
             <p className="text-muted-foreground leading-relaxed max-w-md">
-              Human-centred AI consulting and education. We help organisations learn, harness, and create with AI—accessibly and intentionally.
+              Applied, responsible AI & data work. Workshops, consulting, and prototyping—built around people.
             </p>
           </div>
           
-          {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
+            <h4 className="font-semibold text-foreground mb-4">Navigate</h4>
             <ul className="space-y-2">
-              <li>
-                <Link to="/services" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/workshops" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Workshops
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Contact
-                </Link>
-              </li>
+              {footerLinks.map((link) => (
+                <li key={link.name}>
+                  <button
+                    onClick={() => scrollToSection(link.href)}
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.name}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
           
-          {/* Contact */}
           <div>
             <h4 className="font-semibold text-foreground mb-4">Contact</h4>
             <ul className="space-y-2">
               <li>
-                <a 
-                  href="mailto:contact@lhclabs.com" 
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
+                <a href="mailto:contact@lhclabs.com" className="text-muted-foreground hover:text-foreground transition-colors">
                   contact@lhclabs.com
                 </a>
               </li>
@@ -60,7 +55,6 @@ export const Footer = () => {
           </div>
         </div>
         
-        {/* Bottom */}
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} LHC Labs. All rights reserved.
