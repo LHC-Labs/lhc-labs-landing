@@ -43,7 +43,7 @@ export const Pillars = () => {
   return (
     <section id="pillars" className="py-32 relative overflow-hidden bg-background">
       {/* Subtle background gradients */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(270_50%_12%)_0%,transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(275_60%_14%)_0%,transparent_60%)]" />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">

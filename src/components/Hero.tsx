@@ -17,15 +17,15 @@ export const Hero = () => {
       
       {/* Deep purple gradient background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(270_60%_20%)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,hsl(280_50%_18%)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(260_40%_12%)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(275_70%_22%)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,hsl(285_50%_18%)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(260_80%_14%)_0%,transparent_50%)]" />
         
         {/* Subtle grid pattern */}
         <div 
           className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: `linear-gradient(hsl(270 60% 75% / 0.4) 1px, transparent 1px), linear-gradient(90deg, hsl(270 60% 75% / 0.4) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(hsl(285 38% 70% / 0.4) 1px, transparent 1px), linear-gradient(90deg, hsl(285 38% 70% / 0.4) 1px, transparent 1px)`,
             backgroundSize: '80px 80px'
           }}
         />

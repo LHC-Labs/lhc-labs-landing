@@ -9,97 +9,97 @@
 
 @layer base {
   :root {
-    /* Deep purple background - richer purple tone */
-    --background: 265 45% 8%;
-    --foreground: 270 20% 95%;
+    /* Deep indigo-purple background matching logo #1f024f */
+    --background: 265 96% 10%;
+    --foreground: 270 30% 94%;
 
-    --card: 240 28% 10%;
-    --card-foreground: 270 20% 95%;
+    --card: 265 70% 12%;
+    --card-foreground: 270 30% 94%;
 
-    --popover: 240 28% 10%;
-    --popover-foreground: 270 20% 95%;
+    --popover: 265 70% 12%;
+    --popover-foreground: 270 30% 94%;
 
-    --primary: 268 75% 50%;
-    --primary-foreground: 270 20% 98%;
+    --primary: 265 80% 45%;
+    --primary-foreground: 270 30% 96%;
 
-    --secondary: 240 25% 14%;
-    --secondary-foreground: 270 20% 92%;
+    --secondary: 265 50% 16%;
+    --secondary-foreground: 270 25% 90%;
 
-    --muted: 240 20% 18%;
-    --muted-foreground: 270 15% 60%;
+    --muted: 265 40% 20%;
+    --muted-foreground: 270 20% 60%;
 
-    --accent: 270 60% 75%;
-    --accent-foreground: 240 30% 10%;
+    --accent: 285 38% 70%;
+    --accent-foreground: 265 90% 12%;
 
     --destructive: 0 70% 50%;
-    --destructive-foreground: 270 20% 98%;
+    --destructive-foreground: 270 30% 96%;
 
-    --border: 240 25% 18%;
-    --input: 240 25% 18%;
-    --ring: 270 60% 75%;
+    --border: 265 40% 20%;
+    --input: 265 40% 20%;
+    --ring: 285 38% 70%;
 
     --radius: 0.75rem;
 
-    /* Pillar Colors */
-    --learn: 270 60% 75%;
-    --learn-foreground: 240 30% 10%;
-    --learn-muted: 270 50% 25%;
+    /* Pillar Colors - harmonised with logo palette */
+    --learn: 285 38% 70%;
+    --learn-foreground: 265 90% 12%;
+    --learn-muted: 285 30% 25%;
     
-    --harness: 210 85% 60%;
-    --harness-foreground: 210 100% 10%;
-    --harness-muted: 210 60% 25%;
+    --harness: 230 55% 62%;
+    --harness-foreground: 230 80% 12%;
+    --harness-muted: 230 40% 25%;
     
-    --create: 330 75% 65%;
-    --create-foreground: 330 100% 10%;
-    --create-muted: 330 50% 25%;
+    --create: 320 50% 65%;
+    --create-foreground: 320 70% 12%;
+    --create-muted: 320 35% 25%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(240 30% 6%), hsl(268 40% 10%));
-    --gradient-card: linear-gradient(180deg, hsl(240 28% 10%), hsl(240 25% 8%));
-    --gradient-lavender: linear-gradient(135deg, hsl(270 60% 75% / 0.2), hsl(270 50% 60% / 0.1));
-    --gradient-blue: linear-gradient(135deg, hsl(210 85% 60% / 0.2), hsl(210 70% 50% / 0.1));
-    --gradient-pink: linear-gradient(135deg, hsl(330 75% 65% / 0.2), hsl(330 60% 55% / 0.1));
+    --gradient-hero: linear-gradient(135deg, hsl(265 90% 8%), hsl(265 80% 14%));
+    --gradient-card: linear-gradient(180deg, hsl(265 70% 12%), hsl(265 80% 9%));
+    --gradient-lavender: linear-gradient(135deg, hsl(285 38% 70% / 0.2), hsl(285 30% 55% / 0.1));
+    --gradient-blue: linear-gradient(135deg, hsl(230 55% 62% / 0.2), hsl(230 45% 50% / 0.1));
+    --gradient-pink: linear-gradient(135deg, hsl(320 50% 65% / 0.2), hsl(320 40% 55% / 0.1));
 
     /* Shadows */
-    --shadow-soft: 0 4px 20px hsla(240, 30%, 3%, 0.5);
-    --shadow-medium: 0 8px 30px hsla(240, 30%, 3%, 0.6);
-    --shadow-glow: 0 0 40px hsla(270, 60%, 75%, 0.3);
-    --shadow-lavender: 0 0 30px hsla(270, 60%, 75%, 0.25);
-    --shadow-blue: 0 0 30px hsla(210, 85%, 60%, 0.25);
-    --shadow-pink: 0 0 30px hsla(330, 75%, 65%, 0.25);
+    --shadow-soft: 0 4px 20px hsla(265, 90%, 5%, 0.5);
+    --shadow-medium: 0 8px 30px hsla(265, 90%, 5%, 0.6);
+    --shadow-glow: 0 0 40px hsla(285, 38%, 70%, 0.3);
+    --shadow-lavender: 0 0 30px hsla(285, 38%, 70%, 0.25);
+    --shadow-blue: 0 0 30px hsla(230, 55%, 62%, 0.25);
+    --shadow-pink: 0 0 30px hsla(320, 50%, 65%, 0.25);
 
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 240 30% 6%;
-    --foreground: 270 20% 95%;
+    --background: 265 96% 10%;
+    --foreground: 270 30% 94%;
 
-    --card: 240 28% 10%;
-    --card-foreground: 270 20% 95%;
+    --card: 265 70% 12%;
+    --card-foreground: 270 30% 94%;
 
-    --popover: 240 28% 10%;
-    --popover-foreground: 270 20% 95%;
+    --popover: 265 70% 12%;
+    --popover-foreground: 270 30% 94%;
 
-    --primary: 268 75% 50%;
-    --primary-foreground: 270 20% 98%;
+    --primary: 265 80% 45%;
+    --primary-foreground: 270 30% 96%;
 
-    --secondary: 240 25% 14%;
-    --secondary-foreground: 270 20% 92%;
+    --secondary: 265 50% 16%;
+    --secondary-foreground: 270 25% 90%;
 
-    --muted: 240 20% 18%;
-    --muted-foreground: 270 15% 60%;
+    --muted: 265 40% 20%;
+    --muted-foreground: 270 20% 60%;
 
-    --accent: 270 60% 75%;
-    --accent-foreground: 240 30% 10%;
+    --accent: 285 38% 70%;
+    --accent-foreground: 265 90% 12%;
 
     --destructive: 0 70% 50%;
-    --destructive-foreground: 270 20% 98%;
+    --destructive-foreground: 270 30% 96%;
 
-    --border: 240 25% 18%;
-    --input: 240 25% 18%;
-    --ring: 270 60% 75%;
+    --border: 265 40% 20%;
+    --input: 265 40% 20%;
+    --ring: 285 38% 70%;
   }
 }
 
