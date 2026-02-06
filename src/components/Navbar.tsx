@@ -60,7 +60,7 @@ export const Navbar = () => {
             <img
               src={lhcLogo}
               alt="LHC Labs"
-              className="w-10 h-10 group-hover:scale-110 transition-transform duration-300"
+              className="w-16 h-16 group-hover:scale-110 transition-transform duration-300"
             />
           </button>
 
