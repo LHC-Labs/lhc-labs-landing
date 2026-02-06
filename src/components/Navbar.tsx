@@ -62,9 +62,6 @@ export const Navbar = () => {
               alt="LHC Labs"
               className="w-10 h-10 group-hover:scale-110 transition-transform duration-300"
             />
-            <span className="font-bold text-xl text-foreground hidden sm:block">
-              LHC Labs
-            </span>
           </button>
 
           {/* Desktop Navigation */}
