@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import lhcLogo from "@/assets/lhc-logo.svg";
+import lhcLogo from "@/assets/lhc-logo.png";
 
 const navLinks = [
   { name: "Home", href: "#hero" },
