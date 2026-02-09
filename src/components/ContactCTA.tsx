@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { Send, Mail } from "lucide-react";
+import { AnimatedSection } from "@/components/AnimatedSection";
 
 export const ContactCTA = () => {
   const { toast } = useToast();
@@ -28,22 +29,16 @@ export const ContactCTA = () => {
   return (
     <section id="contact" className="py-24 relative overflow-hidden scroll-mt-20">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(270_50%_16%)_0%,transparent_50%)]" />
-      <div className="container mx-auto px-6 relative z-10">
+      <AnimatedSection className="container mx-auto px-6 relative z-10">
         <div className="max-w-2xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Let's work together
             </h2>
             <p className="text-muted-foreground text-lg">
               Whether you're exploring AI for the first time or need a prototype built, we'd love to hear from you.
             </p>
-          </motion.div>
+          </div>
 
           <motion.form
             initial={{ opacity: 0, y: 30 }}
@@ -88,7 +83,7 @@ export const ContactCTA = () => {
             <a href="mailto:contact@lhclabs.com" className="text-lg font-medium text-accent hover:underline">contact@lhclabs.com</a>
           </motion.div>
         </div>
-      </div>
+      </AnimatedSection>
     </section>
   );
 };

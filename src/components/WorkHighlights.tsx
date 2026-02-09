@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { AnimatedSection } from "@/components/AnimatedSection";
 import workshopImg from "@/assets/workshop-ai-research.jpg";
 import dashboardImg from "@/assets/work-dashboard.jpg";
 import eventImg from "@/assets/workshop-event.jpg";
@@ -31,20 +32,14 @@ export const WorkHighlights = () => {
   return (
     <section id="work" className="py-24 relative overflow-hidden scroll-mt-20">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_left,hsl(270_50%_14%)_0%,transparent_50%)]" />
-      <div className="container mx-auto px-6 relative z-10">
+      <AnimatedSection className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="mb-16"
-          >
+          <div className="mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">What we've done</h2>
             <p className="text-muted-foreground text-lg max-w-xl">
               Real projects with real people—here's a snapshot of our recent work.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             {highlights.map((item, index) => (
@@ -72,7 +67,7 @@ export const WorkHighlights = () => {
             ))}
           </div>
         </div>
-      </div>
+      </AnimatedSection>
     </section>
   );
 };

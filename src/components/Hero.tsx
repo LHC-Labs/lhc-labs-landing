@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { AnimatedSection } from "@/components/AnimatedSection";
 
 export const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -24,7 +25,7 @@ export const Hero = () => {
       </div>
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 pt-20">
+      <AnimatedSection className="relative z-10 container mx-auto px-6 pt-20">
         <div className="max-w-3xl mx-auto text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
@@ -60,7 +61,7 @@ export const Hero = () => {
             </Button>
           </motion.div>
         </div>
-      </div>
+      </AnimatedSection>
       
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
