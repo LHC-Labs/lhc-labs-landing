@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import workshopsHero from "@/assets/workshops-hero.jpg";
@@ -11,7 +12,7 @@ const scrollToSection = (id: string) => {
 export const WorkshopsEvents = () => {
   return (
     <section id="workshops" className="py-24 relative overflow-hidden scroll-mt-20">
-      <div className="container mx-auto px-6 relative z-10">
+      <AnimatedSection className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Image */}
@@ -56,7 +57,7 @@ export const WorkshopsEvents = () => {
             </motion.div>
           </div>
         </div>
-      </div>
+      </AnimatedSection>
     </section>
   );
 };

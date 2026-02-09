@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { AnimatedSection } from "@/components/AnimatedSection";
 
 const partners = [
   { name: "University of Sussex" },
@@ -10,14 +11,8 @@ const partners = [
 export const TrustedBy = () => {
   return (
     <section className="py-16 relative overflow-hidden border-t border-border/30">
-      <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
+      <AnimatedSection className="container mx-auto px-6">
+        <div className="text-center">
           <p className="text-sm uppercase tracking-widest text-muted-foreground mb-10">
             Trusted by & worked with
           </p>
@@ -37,8 +32,8 @@ export const TrustedBy = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </AnimatedSection>
     </section>
   );
 };
