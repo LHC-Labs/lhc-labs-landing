@@ -4,6 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import emailjs from "@emailjs/browser";
 
 // EmailJS publishable credentials — replace with your own
@@ -15,6 +22,7 @@ export const ContactCTA = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const [interestedIn, setInterestedIn] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,6 +38,7 @@ export const ContactCTA = () => {
       );
       setSent(true);
       formRef.current.reset();
+      setInterestedIn("");
       setTimeout(() => setSent(false), 5000);
     } catch (error) {
       console.error("EmailJS error:", error);
@@ -85,6 +94,21 @@ export const ContactCTA = () => {
                 placeholder="you@example.com"
                 required
               />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="interested_in">Interested in…</Label>
+              <Select value={interestedIn} onValueChange={setInterestedIn}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select a service" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="Workshops">Workshops</SelectItem>
+                  <SelectItem value="Strategy">Strategy</SelectItem>
+                  <SelectItem value="Prototyping">Prototyping</SelectItem>
+                </SelectContent>
+              </Select>
+              <input type="hidden" name="interested_in" value={interestedIn} />
             </div>
 
             <div className="space-y-2">
