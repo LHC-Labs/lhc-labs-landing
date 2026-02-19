@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-import { AnimatedSection } from "@/components/AnimatedSection";
 import { Linkedin, Mail } from "lucide-react";
 
 const directors = [
@@ -33,7 +31,7 @@ export const WhoWeAre = () => {
   return (
     <section id="about" className="py-24 relative overflow-hidden scroll-mt-20">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(270_50%_14%)_0%,transparent_60%)]" />
-      <AnimatedSection className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-6">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Who we are</h2>
@@ -43,13 +41,9 @@ export const WhoWeAre = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mt-12">
-            {directors.map((director, index) => (
-              <motion.div
+            {directors.map((director) => (
+              <div
                 key={director.name}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                viewport={{ once: true, margin: "-50px" }}
                 className="group rounded-2xl bg-card/50 border border-border hover:border-accent/30 transition-all duration-300 overflow-hidden"
               >
                 <div className="aspect-square overflow-hidden">
@@ -68,11 +62,11 @@ export const WhoWeAre = () => {
                     </a>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
-      </AnimatedSection>
+      </div>
     </section>
   );
 };

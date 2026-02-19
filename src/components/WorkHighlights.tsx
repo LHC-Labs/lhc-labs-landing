@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-import { AnimatedSection } from "@/components/AnimatedSection";
 import workshopImg from "@/assets/workshop-ai-research.jpg";
 import dashboardImg from "@/assets/work-dashboard.jpg";
 import eventImg from "@/assets/workshop-event.jpg";
@@ -32,7 +30,7 @@ export const WorkHighlights = () => {
   return (
     <section id="work" className="py-24 relative overflow-hidden scroll-mt-20">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_left,hsl(270_50%_14%)_0%,transparent_50%)]" />
-      <AnimatedSection className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">What we've done</h2>
@@ -42,13 +40,9 @@ export const WorkHighlights = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {highlights.map((item, index) => (
-              <motion.div
+            {highlights.map((item) => (
+              <div
                 key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true, margin: "-50px" }}
                 className="group rounded-2xl overflow-hidden bg-card/50 border border-border hover:border-accent/30 transition-all duration-300"
               >
                 <div className="aspect-[16/10] overflow-hidden">
@@ -63,11 +57,11 @@ export const WorkHighlights = () => {
                   <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
-      </AnimatedSection>
+      </div>
     </section>
   );
 };
